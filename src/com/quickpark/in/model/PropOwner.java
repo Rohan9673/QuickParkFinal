@@ -18,7 +18,7 @@ public class PropOwner {
 	
 	 @NotNull
 	
-	private int MobNo;
+	private long MobNo;
 	 @Email
 	private String  EmailId;
 	public String getAddress() {
@@ -62,11 +62,11 @@ public class PropOwner {
 	public void setLastName(String lastName) {
 		LastName = lastName;
 	}
-	public int getMobNo() {
+	public long getMobNo() {
 		return MobNo;
 	}
-	public void setMobNo(int mobNo) {
-		MobNo = mobNo;
+	public void setMobNo(String mobNo) {
+		MobNo =Long.parseLong(mobNo);
 	}
 	
 	public String getPassword() {
@@ -79,7 +79,7 @@ public class PropOwner {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public PropOwner(String firstName, String lastName, int mobNo, String emailID, String password) {
+	public PropOwner(String firstName, String lastName, long mobNo, String emailID, String password) {
 		super();
 		FirstName = firstName;
 		LastName = lastName;

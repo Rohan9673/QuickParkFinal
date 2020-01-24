@@ -34,11 +34,11 @@ public class VehicleOwnerRegistController {
 	{	
 		if (result.hasErrors()) {
 			 
-			return "Prop_Owner_register";
+			return "Veh_Owner_register";
 		 
 		} 
 		if(vehicleownerservice.add(owner))
-			return "login";
+			return "Login1";
 		else 
 			return "home";
 	}

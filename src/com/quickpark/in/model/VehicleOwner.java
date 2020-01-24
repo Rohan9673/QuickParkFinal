@@ -15,9 +15,7 @@ public class VehicleOwner {
 	 @NotNull(message="required")
 	private String lastName;
 	 @NotNull(message="required")
-	 @NumberFormat
-	 @Size(min = 5,max = 15,message="required")
-	private String mobNo;
+	private long mobNo;
 	 @Email
 	private String emailID;
 	 @NotNull(message="required")
@@ -52,11 +50,11 @@ public class VehicleOwner {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getMobNo() {
+	public long getMobNo() {
 		return mobNo;
 	}
 	public void setMobNo(String mobNo) {
-		this.mobNo = mobNo;
+		this.mobNo = Long.parseLong(mobNo);
 	}
 	public String getEmailID() {
 		return emailID;
@@ -70,7 +68,7 @@ public class VehicleOwner {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public VehicleOwner(String userName, String firstName, String lastName, String mobNo, String emailID, String address) {
+	public VehicleOwner(String userName, String firstName, String lastName, long mobNo, String emailID, String address) {
 		super();
 		this.userName = userName;
 		this.firstName = firstName;

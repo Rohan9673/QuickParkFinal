@@ -31,7 +31,7 @@
     </bean>
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/QuickPark2?useSSL=false"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/quickpark?useSSL=false"></property>
 		<property name="username" value="root" ></property>
 		<property name="password" value="cdac"></property>
 	</bean>

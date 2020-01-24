@@ -1,42 +1,45 @@
 package com.quickpark.in.model;
 
-public class Login {
+import javax.validation.constraints.NotNull;
 
-	private String UserName;
-	private String Password;
-	private String Role;
+public class Login {
+    @NotNull
+	private String userName;
+    @NotNull
+	private String password;
+	private String role;
 
 
 	public Login() {
 		super();
 		// TODO Auto-generated constructor stub
 		
-		System.out.println(UserName+"  "+Password);
+		System.out.println(userName+"  "+password);
 		
 	}
 
-	public Login(String userName, String password, String role) {
+	public Login(String username, String pass, String r) {
 		super();
-		UserName = userName;
-		Password = password;
-		Role=role;
+		userName = username;
+		password = pass;
+		role=r;
 	}
 	public String getRole() {
-		return Role;
+		return role;
 	}
-	public void setRole(String role) {
-		Role = role;
+	public void setRole(String r) {
+		role = r;
 	}
 	public String getUserName() {
-		return UserName;
+		return userName;
 	}
-	public void setUserName(String userName) {
-		UserName = userName;
+	public void setUserName(String username) {
+		userName = username;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
-	public void setPassword(String password) {
-		Password = password;
+	public void setPassword(String pass) {
+		password = pass;
 	}
 }

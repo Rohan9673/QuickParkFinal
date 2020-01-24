@@ -40,7 +40,7 @@ public class PropRegistrationController {
 		 
 		  
 		if(propownerservice.add(owner))
-			return "login";
+			return "Login1";
 		else 
 			return "home";
 	}

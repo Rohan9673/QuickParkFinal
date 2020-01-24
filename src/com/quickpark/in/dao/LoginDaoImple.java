@@ -27,7 +27,7 @@ public class LoginDaoImple implements LoginDao {
 	public Login validateUser(Login login) {
 		Login log1=null;
 		 
-	      	String sql = "select * from Master where UserName=? and Password=?";
+	      	String sql = "select * from user where user_name=? and password=?";
 	      		Login log=new Login();
 		try {
 	      		 log1=jdbctemplate.queryForObject(sql, new Object[]{login.getUserName(),login.getPassword()}, new RowMapper<Login>() {
@@ -36,9 +36,10 @@ public class LoginDaoImple implements LoginDao {
 				public Login mapRow(ResultSet rs, int rowNum) throws SQLException {
 					
 					Login log=new Login();
-					log.setUserName(rs.getString(1));
-					log.setPassword(rs.getString(2));
-					log.setRole(rs.getString(3));
+					log.setUserName(rs.getString(2));
+					log.setPassword(rs.getString(8));
+					log.setRole(rs.getString(10));
+					
 					
 						return log;
 					}	

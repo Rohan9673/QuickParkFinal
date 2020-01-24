@@ -6,14 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-
 <body>
-<% 
-   session.removeAttribute("user");
-	session.invalidate();
-	response.setHeader("Cache-Control", "No-Store");
-	response.setHeader("Cache-Control", "No-Cache");
-	response.sendRedirect("Login1.jsp");
-%>
+<h1>Welcome <%=session.getAttribute("username") %></h1>
+<a  href="logout">Logout</a>
 </body>
 </html>

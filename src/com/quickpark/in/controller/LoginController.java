@@ -1,9 +1,13 @@
 package com.quickpark.in.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,20 +30,49 @@ public class LoginController {
 	public ModelAndView userLogin() {
 
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("login");
+		mv.setViewName("Login1");
 
 		return mv;
 
 	}
+	@RequestMapping(value = "/abc", method = RequestMethod.GET)
+	public ModelAndView usersession(HttpServletRequest request,HttpServletResponse response) {
 
+		ModelAndView mv = new ModelAndView();
+		
+
+			if(request.getSession().getAttribute("username")!=null && request.getSession().getAttribute("role").equals("vehicleowner"))
+			{
+				mv.setViewName("VehicleOwnerHome");
+				
+			}
+			else if(request.getSession().getAttribute("username")!=null && request.getSession().getAttribute("role").equals("propertyowner"))
+			{
+				mv.setViewName("PropertOwnerHome");
+			
+			}
+			else if(request.getSession().getAttribute("username")!=null && request.getSession().getAttribute("role").equals("admin"))
+			{
+				mv.setViewName("AdminHome");
+				
+			}
+		
+			else
+			{
+				mv.setViewName("Login1");
+			}
+
+		return mv;
+
+	}
+	
 	@RequestMapping(value = "/abc", method = RequestMethod.POST)
-	public ModelAndView userLogin(@RequestParam("UserName") String UserName, @RequestParam("Password") String Password,HttpSession session) {
-
+	public ModelAndView userLogin(@RequestParam("userName") String userName, @RequestParam("password") String password,HttpServletRequest request,HttpServletResponse response)
+	{	
 		ModelAndView modelview = new ModelAndView();
-
 		Login log = new Login();
-		log.setUserName(UserName);
-		log.setPassword(Password);
+		log.setUserName(userName);
+		log.setPassword(password);
 
 		//System.out.println(UserName+" "+Password);
 		Login log1=loginservice.validateUser(log);
@@ -52,17 +85,20 @@ public class LoginController {
 			if(log1.getRole().equalsIgnoreCase("vehicleowner"))
 			{
 				modelview.setViewName("VehicleOwnerHome");
-				session.setAttribute("username", UserName);
+				request.getSession().setAttribute("username", userName);
+				request.getSession().setAttribute("role",log1.getRole() );
 			}
 			else if(log1.getRole().equalsIgnoreCase("propertyowner"))
 			{
 				modelview.setViewName("PropertOwnerHome");
-				session.setAttribute("username", UserName);
+				request.getSession().setAttribute("username", userName);
+				request.getSession().setAttribute("role",log1.getRole() );
 			}
 			else if(log1.getRole().equalsIgnoreCase("admin"))
 			{
 				modelview.setViewName("AdminHome");
-			session.setAttribute("username", UserName);
+				request.getSession().setAttribute("username", userName);
+				request.getSession().setAttribute("role",log1.getRole() );
 			}
 		}
 		
@@ -70,7 +106,7 @@ public class LoginController {
 		else {
 
 			modelview.addObject("msg", "Invalid user id or password.");
-			modelview.setViewName("login");
+			modelview.setViewName("Login1");
 		}
 		
 
@@ -81,11 +117,14 @@ public class LoginController {
 
 
 @RequestMapping(value = "logout", method = RequestMethod.GET)
-public ModelAndView userLogout() {
+public ModelAndView userLogout(HttpServletRequest request,HttpServletResponse response) {
 
+	request.getSession().invalidate();
 	ModelAndView mv = new ModelAndView();
-	mv.setViewName("Logout");
+	mv.setViewName("Login1");
 	return mv;
 
 }
+
+
 }
