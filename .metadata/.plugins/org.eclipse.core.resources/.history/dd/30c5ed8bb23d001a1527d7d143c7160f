@@ -1,0 +1,20 @@
+package com.quickpark.in.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.quickpark.in.service.VehicleOwnerService;
+
+@Controller
+public class VehicleOwnerRegistController {
+
+	@Autowired
+	VehicleOwnerService vehicleownerservice;
+
+	public void setVehicleownerservice(VehicleOwnerService vehicleownerservice) {
+		this.vehicleownerservice = vehicleownerservice;
+	}
+	
+	
+	
+}

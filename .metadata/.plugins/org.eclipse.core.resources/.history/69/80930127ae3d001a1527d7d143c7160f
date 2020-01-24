@@ -1,0 +1,5 @@
+package com.quickpark.in.controller;
+
+public class VehicleOwnerRegistController {
+
+}

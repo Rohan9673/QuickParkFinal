@@ -8,9 +8,10 @@
 			Login Page
 	</title>
 	
-</head>
+</head> 
 <body >
 
-Admin Page
+<h1>Welcome Admin <%=session.getAttribute("username") %></h1>
+<a  href="logout">Logout</a>
 </body>
 </html>

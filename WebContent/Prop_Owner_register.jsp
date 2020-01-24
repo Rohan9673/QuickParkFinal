@@ -19,18 +19,21 @@
             <div class="col-3"><br></div> 
            
              <form class="Login-form" action="pqr" method="post" >
-                 
+                
+                <input type="text" required="required" placeholder="username" name="UserName"/>
                  <input type="text" required="required" placeholder="First Name" name="FirstName"/>
                  <input type="text" required="required" placeholder="Last Name" name="LastName"/>
                  <input type="text" required="required" placeholder="Mobile No" name="MobNo"/>
-                 <input type="text" required="required" placeholder="Email Id" name="EmailID"/>
-                 <input type="text" required="required" placeholder="PassWord" name="Password"/>
-                 
+                 <input type="text" required="required" placeholder="addrsss" name="Address"/>
+                 <input type="text" required="required" placeholder="Email Id" name="EmailId"/>
+                 <input type="Password" required="required" placeholder="PassWord" name="Password"/>
+                
+                
                  <button >
                      Submit
                  </button>
                 <p class="message">Already registered?
-             	<a class="text-light" href="Login.jsp">login</a></p>
+             	<a class="text-light" href="login.jsp">login</a></p>
             </div>
              </form>
          </div>

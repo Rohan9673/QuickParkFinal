@@ -1,0 +1,72 @@
+package com.quickpark.in.model;
+
+public class VehicleOwner {
+	
+	
+	private static int vehicleOwnerID=1;
+	private String userName;
+	private String firstName;
+	private String lastName;
+	private int mobNo;
+	private String emailID;
+	private String address;
+	public static int getVehicleOwnerID() {
+		return vehicleOwnerID;
+	}
+	public static void setVehicleOwnerID() {
+		vehicleOwnerID++;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public int getMobNo() {
+		return mobNo;
+	}
+	public void setMobNo(int mobNo) {
+		this.mobNo = mobNo;
+	}
+	public String getEmailID() {
+		return emailID;
+	}
+	public void setEmailID(String emailID) {
+		this.emailID = emailID;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public VehicleOwner(String userName, String firstName, String lastName, int mobNo, String emailID, String address) {
+		super();
+		this.userName = userName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mobNo = mobNo;
+		this.emailID = emailID;
+		this.address = address;
+	}
+	public VehicleOwner() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+
+}

@@ -1,8 +1,15 @@
 package com.quickpark.in.dao;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import com.quickpark.in.model.PropOwner;
 
@@ -16,19 +23,30 @@ public class PropOwnerDaoImple implements PropOwnerDao{
 		this.jt = jt;
 	}
 	
+
+	 
+
+	     
 	@Override
+	@Transactional
 	public boolean add(PropOwner owner) {
 		
-			String sql= "insert into VehicleOwner values(?,?,?,?,?,?)";
 		
-		int i=jt.update(sql, new Object[] {
-				owner.getOwnreId(),
+		
+		
+		String sql= "insert into propertyowner(UserName,FirstName,LastName,MobileNo,EmailId,Address,Status,Password) values(?,?,?,?,?,?,?,?)";
+			
+			int i=jt.update(sql, new Object[] {
+				owner.getUserName(),
 				owner.getFirstName(),
 				owner.getLastName(),
 				owner.getMobNo(),
-				owner.getEmailID(),	
+				owner.getEmailId(),
+				owner.getAddress(),
+				1,
 				owner.getPassword()
-						
+				
+					
 				
 		});
 		

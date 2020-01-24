@@ -1,0 +1,64 @@
+package com.quickpark.in.model;
+
+public class PropOwner {
+
+	private int OwnreId;
+	private String FirstName;
+	private String LastName;
+	private String MobNo;
+	private String EmailID;
+	private String Password;
+	
+	
+	public  int getOwnreId() {
+		return OwnreId;
+	}
+	public void setOwnreId(int ownerid) {
+		OwnreId =ownerid;
+	}
+	public String getFirstName() {
+		return FirstName;
+	}
+	public void setFirstName(String firstName) {
+		FirstName = firstName;
+	}
+	public String getLastName() {
+		return LastName;
+	}
+	public void setLastName(String lastName) {
+		LastName = lastName;
+	}
+	public String getMobNo() {
+		return MobNo;
+	}
+	public void setMobNo(String mobNo) {
+		MobNo = mobNo;
+	}
+	public String getEmailID() {
+		return EmailID;
+	}
+	public void setEmailID(String emailID) {
+		EmailID = emailID;
+	}
+	public String getPassword() {
+		return Password;
+	}
+	public void setPassword(String password) {
+		Password = password;
+	}
+	public PropOwner() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public PropOwner(String firstName, String lastName, String mobNo, String emailID, String password) {
+		super();
+		FirstName = firstName;
+		LastName = lastName;
+		MobNo = mobNo;
+		EmailID = emailID;
+		Password = password;
+	}
+	public Object getaddress() {
+		return addrsss;
+	}
+}

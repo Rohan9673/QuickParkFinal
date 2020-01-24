@@ -78,4 +78,14 @@ public class LoginController {
 
 	}
 
+
+
+@RequestMapping(value = "logout", method = RequestMethod.GET)
+public ModelAndView userLogout() {
+
+	ModelAndView mv = new ModelAndView();
+	mv.setViewName("Logout");
+	return mv;
+
+}
 }

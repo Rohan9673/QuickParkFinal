@@ -1,0 +1,5 @@
+package com.quickpark.in.dao;
+
+public interface VehicleOwnerDao {
+
+}

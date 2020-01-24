@@ -1,0 +1,17 @@
+package com.quickpark.in.service;
+
+import org.springframework.stereotype.Service;
+
+import com.quickpark.in.model.VehicleOwner;
+
+@Service
+public class VehicleOwnerServiceImple implements VehicleOwnerService {
+
+	@Override
+	public boolean add(VehicleOwner owner) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+
+}

@@ -1,0 +1,14 @@
+package com.quickpark.in.service;
+
+import com.quickpark.in.model.VehicleOwner;
+
+public class VehicleOwnerServiceImple implements VehicleOwnerService {
+
+	@Override
+	public boolean add(VehicleOwner owner) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+
+}

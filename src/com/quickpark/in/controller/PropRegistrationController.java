@@ -1,7 +1,10 @@
 package com.quickpark.in.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,10 +30,17 @@ public class PropRegistrationController {
 	}
 	
 	@RequestMapping(value="/pqr",method = RequestMethod.POST)
-	public String save(@ModelAttribute("owner") PropOwner owner)
+	public String save(@Valid@ModelAttribute("owner") PropOwner owner,BindingResult result)
 	{	
+		if (result.hasErrors()) {
+			 
+			return "Prop_Owner_register";
+		 
+		} 
+		 
+		  
 		if(propownerservice.add(owner))
-			return "index";
+			return "login";
 		else 
 			return "home";
 	}

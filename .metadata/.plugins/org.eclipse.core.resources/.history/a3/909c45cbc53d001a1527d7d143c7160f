@@ -1,0 +1,16 @@
+package com.quickpark.in.dao;
+
+import org.springframework.stereotype.Repository;
+
+import com.quickpark.in.model.VehicleOwner;
+
+@Repository
+public class VehicleOwnerDaoImple implements VehicleOwnerDao{
+
+	@Override
+	public boolean add(VehicleOwner owner) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+}

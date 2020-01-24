@@ -1,0 +1,6 @@
+package com.quickpark.in.service;
+
+public class VehicleOwnerServiceImple implements VehicleOwnerService {
+	
+
+}

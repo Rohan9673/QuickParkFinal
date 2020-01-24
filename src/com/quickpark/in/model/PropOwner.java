@@ -1,20 +1,54 @@
 package com.quickpark.in.model;
 
-public class PropOwner {
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-	private static int OwnreId=1;
+import org.hibernate.validator.constraints.Email;
+import org.springframework.format.annotation.NumberFormat;
+
+public class PropOwner {
+	 @Size(min = 5,max = 15,message="required")
+	private String UserName;
+	 @NotNull(message="required")
+	private String Address;
+	 @NotNull(message="required")
 	private String FirstName;
+	 @NotNull(message="required")
 	private String LastName;
-	private String MobNo;
-	private String EmailID;
+	
+	 @NotNull
+	
+	private int MobNo;
+	 @Email
+	private String  EmailId;
+	public String getAddress() {
+		return Address;
+	}
+	public void setAddress(String address) {
+		Address = address;
+	}
+	public String getEmailId() {
+		return EmailId;
+	}
+	public void setEmailId(String emailId) {
+		EmailId = emailId;
+	}
+
 	private String Password;
 	
 	
-	public static int getOwnreId() {
-		return OwnreId;
+	
+	
+	
+	public String getUserName() {
+		return UserName;
 	}
-	public static void setOwnreId() {
-		OwnreId ++;
+	public void setUserName(String userName) {
+		this.UserName = userName;
+	}
+	
+	public String getAddrsss() {
+		return Address;
 	}
 	public String getFirstName() {
 		return FirstName;
@@ -28,18 +62,13 @@ public class PropOwner {
 	public void setLastName(String lastName) {
 		LastName = lastName;
 	}
-	public String getMobNo() {
+	public int getMobNo() {
 		return MobNo;
 	}
-	public void setMobNo(String mobNo) {
+	public void setMobNo(int mobNo) {
 		MobNo = mobNo;
 	}
-	public String getEmailID() {
-		return EmailID;
-	}
-	public void setEmailID(String emailID) {
-		EmailID = emailID;
-	}
+	
 	public String getPassword() {
 		return Password;
 	}
@@ -50,12 +79,16 @@ public class PropOwner {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public PropOwner(String firstName, String lastName, String mobNo, String emailID, String password) {
+	public PropOwner(String firstName, String lastName, int mobNo, String emailID, String password) {
 		super();
 		FirstName = firstName;
 		LastName = lastName;
 		MobNo = mobNo;
-		EmailID = emailID;
+		EmailId = emailID;
 		Password = password;
 	}
+	
+	
+	
+	
 }

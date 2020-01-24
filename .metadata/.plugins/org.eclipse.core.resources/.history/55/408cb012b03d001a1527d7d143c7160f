@@ -1,0 +1,16 @@
+package com.quickpark.in.model;
+
+public class VehicleOwner {
+	
+	
+	private static int vehicleOwnerID;
+	private String userName;
+	private String firstName;
+	private String lastName;
+	private int mobNo;
+	private String emailID;
+	private String address;
+	
+	
+
+}
